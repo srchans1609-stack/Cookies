@@ -14,16 +14,16 @@ function leerCookie(nombreBusqueda) {
     return null;
 }
 
-// Pedir, guardar y recordar el nombre (el guard)
+// Pedir, guardar y recordar el nombre 
 function gestionarUsuario() {
     let usuario = leerCookie("usuario");
     let saludoElemento = document.getElementById("saludo");
-    let idioma = leerCookie("idioma") || "es"; // Para leer el idioma de la Fase 3
+    let idioma = leerCookie("idioma") || "es";
 
     if (!usuario) { // Si NO existe la cookie (Primera visita)
         usuario = prompt("¿Cuál es tu nombre?");
         if (usuario) {
-            // Se guarda por 30 días (30 * 24 * 60 * 60 = 2592000 segundos)
+            // Se guarda por 30 días 
             document.cookie = `usuario=${usuario}; max-age=2592000`;
             alert(`¡Bienvenido, ${usuario}!`);
         } else {
