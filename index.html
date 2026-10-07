@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CookieLab</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="claro"> 
+    
+  
+    <h1>Bienvenido a CookieLab</h1>
+    <p id="saludo"></p>
+
+    <hr>
+
+   
+    <div>
+        <label>Tema:
+            <select id="select-tema">
+                <option value="claro">Claro</option>
+                <option value="oscuro">Oscuro</option>
+            </select>
+        </label>
+        <label>Idioma:
+            <select id="select-idioma">
+                <option value="es">Español</option>
+                <option value="en">Inglés</option>
+            </select>
+        </label>
+    </div>
+
+    
+    <p id="contador"></p>
+
+   
+    <div>
+        <button id="btn-cambiar">Cambiar mi nombre</button>
+        <button id="btn-olvidar">Olvidarme</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
