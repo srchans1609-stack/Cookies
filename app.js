@@ -1,8 +1,6 @@
-
 console.log("CookieLab iniciado");
 
-//Función auxiliar para leer una cookie concreta
-
+// Función auxiliar para leer una cookie concreta
 function leerCookie(nombreBusqueda) {
     let cookies = document.cookie.split("; ");
     for (let i = 0; i < cookies.length; i++) {
@@ -14,7 +12,7 @@ function leerCookie(nombreBusqueda) {
     return null;
 }
 
-// Pedir, guardar y recordar el nombre 
+//Pedir, guardar y recordar el nombre 
 function gestionarUsuario() {
     let usuario = leerCookie("usuario");
     let saludoElemento = document.getElementById("saludo");
@@ -31,7 +29,7 @@ function gestionarUsuario() {
         }
     }
     
-    // Si YA existe, saludamos directamente. Aplicamos el idioma de la Fase 3.
+    // Si YA existe, saludamos directamente.
     if (idioma === "en") {
         saludoElemento.textContent = `Hello again, ${usuario}`;
     } else {
@@ -39,7 +37,7 @@ function gestionarUsuario() {
     }
 }
 
-//Preferencias: tema e idioma
+// 03 // Preferencias: tema e idioma
 function gestionarPreferencias() {
     const selectTema = document.getElementById("select-tema");
     const selectIdioma = document.getElementById("select-idioma");
@@ -83,7 +81,7 @@ function gestionarVisitas() {
     document.getElementById("contador").textContent = `Has visitado esta página ${visitas} veces.`;
 }
 
-// Panel de control
+//Panel de control
 function gestionarPanel() {
     // Botón Cambiar Nombre
     document.getElementById("btn-cambiar").addEventListener("click", () => {
@@ -98,18 +96,15 @@ function gestionarPanel() {
     document.getElementById("btn-olvidar").addEventListener("click", () => {
         let confirmar = confirm("¿Estás seguro de que quieres borrar todos tus datos?");
         if (confirmar) {
-            
             document.cookie = "usuario=; max-age=0";
             document.cookie = "tema=; max-age=0";
             document.cookie = "idioma=; max-age=0";
             document.cookie = "visitas=; max-age=0";
             
-            
             location.reload(); 
         }
     });
 }
-
 
 window.onload = () => {
     gestionarUsuario();
